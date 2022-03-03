@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5ac97e9144c446ad93e927ca124b5f04" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Авторизация" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ВторникН" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ВторникС" Width="1.5" PointX="0.75" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ВторникСТ" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Начальный_класс" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ПонедельникН" Width="1.5" PointX="0.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ПонедельникС" Width="1.5" PointX="0.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ПонедельникСТ" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Постоянное" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Предмет1" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ПятницаН" Width="1.5" PointX="0.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ПятницаС" Width="1.5" PointX="0.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ПятницаСТ" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.СредаН" Width="1.5" PointX="0.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.СредаС" Width="1.5" PointX="0.75" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.СредаСТ" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Средний_класс" Width="1.5" PointX="3" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Старший_класс" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ЧетвергН" Width="1.5" PointX="0.75" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ЧетвергС" Width="1.5" PointX="0.75" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ЧетвергСТ" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Начальный_класс_ВторникН" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Средний_класс_ВторникС" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Старший_класс_ВторникСТ" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Начальный_класс_ПонедельникН" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Начальный_класс_ПятницаН" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Начальный_класс_СредаН" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Начальный_класс_ЧетвергН" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Постоянное_Начальный_класс" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Средний_класс_ПонедельникС" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Старший_класс_ПонедельникСТ" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Постоянное_Средний_класс" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Постоянное_Старший_класс" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Средний_класс_ПятницаС" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Старший_класс_ПятницаСТ" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Средний_класс_СредаС" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Старший_класс_СредаСТ" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Средний_класс_ЧетвергС" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Старший_класс_ЧетвергСТ" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

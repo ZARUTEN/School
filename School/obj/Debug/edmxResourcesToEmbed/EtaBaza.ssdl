@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Авторизация">
+    <Key>
+      <PropertyRef Name="ID_Пользователя" />
+    </Key>
+    <Property Name="ID_Пользователя" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Фио" Type="nchar" MaxLength="100" />
+    <Property Name="Логин" Type="nchar" MaxLength="100" />
+    <Property Name="Пароль" Type="nchar" MaxLength="100" />
+    <Property Name="Префикс" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ВторникН">
+    <Key>
+      <PropertyRef Name="ID_Вторник" />
+    </Key>
+    <Property Name="ID_Вторник" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ВторникС">
+    <Key>
+      <PropertyRef Name="ID_ВторникС" />
+    </Key>
+    <Property Name="ID_ВторникС" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ВторникСТ">
+    <Key>
+      <PropertyRef Name="ID_ВторникСТ" />
+    </Key>
+    <Property Name="ID_ВторникСТ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Начальный класс">
+    <Key>
+      <PropertyRef Name="ID_Начальный Класс" />
+    </Key>
+    <Property Name="ID_Начальный Класс" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Понедельник" Type="int" Nullable="false" />
+    <Property Name="Вторник" Type="int" Nullable="false" />
+    <Property Name="Среда" Type="int" Nullable="false" />
+    <Property Name="Пятница" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ПонедельникН">
+    <Key>
+      <PropertyRef Name="ID_Понедельниик" />
+    </Key>
+    <Property Name="ID_Понедельниик" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ПонедельникС">
+    <Key>
+      <PropertyRef Name="ID_ПонедельниикС" />
+    </Key>
+    <Property Name="ID_ПонедельниикС" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ПонедельникСТ">
+    <Key>
+      <PropertyRef Name="ID_ПонедельниикСТ" />
+    </Key>
+    <Property Name="ID_ПонедельниикСТ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Постоянное">
+    <Key>
+      <PropertyRef Name="ID_Постоянное" />
+    </Key>
+    <Property Name="ID_Постоянное" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Начальный класс" Type="int" Nullable="false" />
+    <Property Name="Средний класс" Type="int" Nullable="false" />
+    <Property Name="Старший класс" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ПятницаН">
+    <Key>
+      <PropertyRef Name="ID_Пятница" />
+    </Key>
+    <Property Name="ID_Пятница" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ПятницаС">
+    <Key>
+      <PropertyRef Name="ID_ПятницаС" />
+    </Key>
+    <Property Name="ID_ПятницаС" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ПятницаСТ">
+    <Key>
+      <PropertyRef Name="ID_ПятницаСТ" />
+    </Key>
+    <Property Name="ID_ПятницаСТ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="СредаН">
+    <Key>
+      <PropertyRef Name="ID_Среда" />
+    </Key>
+    <Property Name="ID_Среда" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="СредаС">
+    <Key>
+      <PropertyRef Name="ID_СредаС" />
+    </Key>
+    <Property Name="ID_СредаС" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="СредаСТ">
+    <Key>
+      <PropertyRef Name="ID_СредаСТ" />
+    </Key>
+    <Property Name="ID_СредаСТ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Предмет" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Учитель" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Средний класс">
+    <Key>
+      <PropertyRef Name="ID_Средний Класс" />
+    </Key>
+    <Property Name="ID_Средний Класс" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Понедельник" Type="int" Nullable="false" />
+    <Property Name="Вторник" Type="int" Nullable="false" />
+    <Property Name="Среда" Type="int" Nullable="false" />
+    <Property Name="Пятница" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Старший класс">
+    <Key>
+      <PropertyRef Name="ID_Старший Класс" />
+    </Key>
+    <Property Name="ID_Старший Класс" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Понедельник" Type="int" Nullable="false" />
+    <Property Name="Вторник" Type="int" Nullable="false" />
+    <Property Name="Среда" Type="int" Nullable="false" />
+    <Property Name="Пятница" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Начальный класс_ВторникН">
+    <End Role="ВторникН" Type="Self.ВторникН" Multiplicity="1" />
+    <End Role="Начальный класс" Type="Self.Начальный класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ВторникН">
+        <PropertyRef Name="ID_Вторник" />
+      </Principal>
+      <Dependent Role="Начальный класс">
+        <PropertyRef Name="Вторник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Начальный класс_ПонедельникН">
+    <End Role="ПонедельникН" Type="Self.ПонедельникН" Multiplicity="1" />
+    <End Role="Начальный класс" Type="Self.Начальный класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПонедельникН">
+        <PropertyRef Name="ID_Понедельниик" />
+      </Principal>
+      <Dependent Role="Начальный класс">
+        <PropertyRef Name="Понедельник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Начальный класс_ПятницаН">
+    <End Role="ПятницаН" Type="Self.ПятницаН" Multiplicity="1" />
+    <End Role="Начальный класс" Type="Self.Начальный класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПятницаН">
+        <PropertyRef Name="ID_Пятница" />
+      </Principal>
+      <Dependent Role="Начальный класс">
+        <PropertyRef Name="Пятница" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Начальный класс_СредаН">
+    <End Role="СредаН" Type="Self.СредаН" Multiplicity="1" />
+    <End Role="Начальный класс" Type="Self.Начальный класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="СредаН">
+        <PropertyRef Name="ID_Среда" />
+      </Principal>
+      <Dependent Role="Начальный класс">
+        <PropertyRef Name="Среда" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_Начальный класс">
+    <End Role="Начальный класс" Type="Self.Начальный класс" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Начальный класс">
+        <PropertyRef Name="ID_Начальный Класс" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="Начальный класс" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_Средний класс">
+    <End Role="Средний класс" Type="Self.Средний класс" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Средний класс">
+        <PropertyRef Name="ID_Средний Класс" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="Средний класс" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_Старший класс">
+    <End Role="Старший класс" Type="Self.Старший класс" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Старший класс">
+        <PropertyRef Name="ID_Старший Класс" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="Старший класс" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Средний класс_ВторникС">
+    <End Role="ВторникС" Type="Self.ВторникС" Multiplicity="1" />
+    <End Role="Средний класс" Type="Self.Средний класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ВторникС">
+        <PropertyRef Name="ID_ВторникС" />
+      </Principal>
+      <Dependent Role="Средний класс">
+        <PropertyRef Name="Вторник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Средний класс_ПонедельникС">
+    <End Role="ПонедельникС" Type="Self.ПонедельникС" Multiplicity="1" />
+    <End Role="Средний класс" Type="Self.Средний класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПонедельникС">
+        <PropertyRef Name="ID_ПонедельниикС" />
+      </Principal>
+      <Dependent Role="Средний класс">
+        <PropertyRef Name="Понедельник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Средний класс_ПятницаС">
+    <End Role="ПятницаС" Type="Self.ПятницаС" Multiplicity="1" />
+    <End Role="Средний класс" Type="Self.Средний класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПятницаС">
+        <PropertyRef Name="ID_ПятницаС" />
+      </Principal>
+      <Dependent Role="Средний класс">
+        <PropertyRef Name="Пятница" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Средний класс_СредаС">
+    <End Role="СредаС" Type="Self.СредаС" Multiplicity="1" />
+    <End Role="Средний класс" Type="Self.Средний класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="СредаС">
+        <PropertyRef Name="ID_СредаС" />
+      </Principal>
+      <Dependent Role="Средний класс">
+        <PropertyRef Name="Среда" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Старший класс_ВторникСТ">
+    <End Role="ВторникСТ" Type="Self.ВторникСТ" Multiplicity="1" />
+    <End Role="Старший класс" Type="Self.Старший класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ВторникСТ">
+        <PropertyRef Name="ID_ВторникСТ" />
+      </Principal>
+      <Dependent Role="Старший класс">
+        <PropertyRef Name="Вторник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Старший класс_ПонедельникСТ">
+    <End Role="ПонедельникСТ" Type="Self.ПонедельникСТ" Multiplicity="1" />
+    <End Role="Старший класс" Type="Self.Старший класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПонедельникСТ">
+        <PropertyRef Name="ID_ПонедельниикСТ" />
+      </Principal>
+      <Dependent Role="Старший класс">
+        <PropertyRef Name="Понедельник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Старший класс_ПятницаСТ">
+    <End Role="ПятницаСТ" Type="Self.ПятницаСТ" Multiplicity="1" />
+    <End Role="Старший класс" Type="Self.Старший класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПятницаСТ">
+        <PropertyRef Name="ID_ПятницаСТ" />
+      </Principal>
+      <Dependent Role="Старший класс">
+        <PropertyRef Name="Пятница" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Старший класс_СредаСТ">
+    <End Role="СредаСТ" Type="Self.СредаСТ" Multiplicity="1" />
+    <End Role="Старший класс" Type="Self.Старший класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="СредаСТ">
+        <PropertyRef Name="ID_СредаСТ" />
+      </Principal>
+      <Dependent Role="Старший класс">
+        <PropertyRef Name="Среда" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ModelContainer">
+    <EntitySet Name="Авторизация" EntityType="Self.Авторизация" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ВторникН" EntityType="Self.ВторникН" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ВторникС" EntityType="Self.ВторникС" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ВторникСТ" EntityType="Self.ВторникСТ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Начальный класс" EntityType="Self.Начальный класс" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ПонедельникН" EntityType="Self.ПонедельникН" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ПонедельникС" EntityType="Self.ПонедельникС" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ПонедельникСТ" EntityType="Self.ПонедельникСТ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Постоянное" EntityType="Self.Постоянное" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ПятницаН" EntityType="Self.ПятницаН" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ПятницаС" EntityType="Self.ПятницаС" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ПятницаСТ" EntityType="Self.ПятницаСТ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="СредаН" EntityType="Self.СредаН" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="СредаС" EntityType="Self.СредаС" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="СредаСТ" EntityType="Self.СредаСТ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Средний класс" EntityType="Self.Средний класс" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Старший класс" EntityType="Self.Старший класс" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Начальный класс_ВторникН" Association="Self.FK_Начальный класс_ВторникН">
+      <End Role="ВторникН" EntitySet="ВторникН" />
+      <End Role="Начальный класс" EntitySet="Начальный класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Начальный класс_ПонедельникН" Association="Self.FK_Начальный класс_ПонедельникН">
+      <End Role="ПонедельникН" EntitySet="ПонедельникН" />
+      <End Role="Начальный класс" EntitySet="Начальный класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Начальный класс_ПятницаН" Association="Self.FK_Начальный класс_ПятницаН">
+      <End Role="ПятницаН" EntitySet="ПятницаН" />
+      <End Role="Начальный класс" EntitySet="Начальный класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Начальный класс_СредаН" Association="Self.FK_Начальный класс_СредаН">
+      <End Role="СредаН" EntitySet="СредаН" />
+      <End Role="Начальный класс" EntitySet="Начальный класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_Начальный класс" Association="Self.FK_Постоянное_Начальный класс">
+      <End Role="Начальный класс" EntitySet="Начальный класс" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_Средний класс" Association="Self.FK_Постоянное_Средний класс">
+      <End Role="Средний класс" EntitySet="Средний класс" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_Старший класс" Association="Self.FK_Постоянное_Старший класс">
+      <End Role="Старший класс" EntitySet="Старший класс" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Средний класс_ВторникС" Association="Self.FK_Средний класс_ВторникС">
+      <End Role="ВторникС" EntitySet="ВторникС" />
+      <End Role="Средний класс" EntitySet="Средний класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Средний класс_ПонедельникС" Association="Self.FK_Средний класс_ПонедельникС">
+      <End Role="ПонедельникС" EntitySet="ПонедельникС" />
+      <End Role="Средний класс" EntitySet="Средний класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Средний класс_ПятницаС" Association="Self.FK_Средний класс_ПятницаС">
+      <End Role="ПятницаС" EntitySet="ПятницаС" />
+      <End Role="Средний класс" EntitySet="Средний класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Средний класс_СредаС" Association="Self.FK_Средний класс_СредаС">
+      <End Role="СредаС" EntitySet="СредаС" />
+      <End Role="Средний класс" EntitySet="Средний класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Старший класс_ВторникСТ" Association="Self.FK_Старший класс_ВторникСТ">
+      <End Role="ВторникСТ" EntitySet="ВторникСТ" />
+      <End Role="Старший класс" EntitySet="Старший класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Старший класс_ПонедельникСТ" Association="Self.FK_Старший класс_ПонедельникСТ">
+      <End Role="ПонедельникСТ" EntitySet="ПонедельникСТ" />
+      <End Role="Старший класс" EntitySet="Старший класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Старший класс_ПятницаСТ" Association="Self.FK_Старший класс_ПятницаСТ">
+      <End Role="ПятницаСТ" EntitySet="ПятницаСТ" />
+      <End Role="Старший класс" EntitySet="Старший класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Старший класс_СредаСТ" Association="Self.FK_Старший класс_СредаСТ">
+      <End Role="СредаСТ" EntitySet="СредаСТ" />
+      <End Role="Старший класс" EntitySet="Старший класс" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

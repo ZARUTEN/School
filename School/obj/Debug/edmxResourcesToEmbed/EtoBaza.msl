@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Авторизация">
+      <EntityTypeMapping TypeName="Model.Авторизация">
+        <MappingFragment StoreEntitySet="Авторизация">
+          <ScalarProperty Name="ID_Пользователя" ColumnName="ID_Пользователя" />
+          <ScalarProperty Name="Логин" ColumnName="Логин" />
+          <ScalarProperty Name="Пароль" ColumnName="Пароль" />
+          <ScalarProperty Name="Префикс" ColumnName="Префикс" />
+          <ScalarProperty Name="Фотография" ColumnName="Фотография" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Временное">
+      <EntityTypeMapping TypeName="Model.Временное">
+        <MappingFragment StoreEntitySet="Временное">
+          <ScalarProperty Name="ID_Временной" ColumnName="ID_Временной" />
+          <ScalarProperty Name="Кабинет" ColumnName="Кабинет" />
+          <ScalarProperty Name="Предмет" ColumnName="Предмет" />
+          <ScalarProperty Name="Учитель" ColumnName="Учитель" />
+          <ScalarProperty Name="Задание" ColumnName="Задание" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ВторникП">
+      <EntityTypeMapping TypeName="Model.ВторникП">
+        <MappingFragment StoreEntitySet="ВторникП">
+          <ScalarProperty Name="ID_ВторникП" ColumnName="ID_ВторникП" />
+          <ScalarProperty Name="ID_Предмета" ColumnName="ID_Предмета" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Задание">
+      <EntityTypeMapping TypeName="Model.Задание">
+        <MappingFragment StoreEntitySet="Задание">
+          <ScalarProperty Name="ID_Предмета" ColumnName="ID_Предмета" />
+          <ScalarProperty Name="ID_Задания" ColumnName="ID_Задания" />
+          <ScalarProperty Name="Задание1" ColumnName="Задание" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Кабинет">
+      <EntityTypeMapping TypeName="Model.Кабинет">
+        <MappingFragment StoreEntitySet="Кабинет">
+          <ScalarProperty Name="ID_Кабинета" ColumnName="ID_Кабинета" />
+          <ScalarProperty Name="Категория" ColumnName="Категория" />
+          <ScalarProperty Name="Номер" ColumnName="Номер" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ПонедельникП">
+      <EntityTypeMapping TypeName="Model.ПонедельникП">
+        <MappingFragment StoreEntitySet="ПонедельникП">
+          <ScalarProperty Name="ID_ПонедельникП" ColumnName="ID_ПонедельникП" />
+          <ScalarProperty Name="ID_Предмета" ColumnName="ID_Предмета" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Постоянное">
+      <EntityTypeMapping TypeName="Model.Постоянное">
+        <MappingFragment StoreEntitySet="Постоянное">
+          <ScalarProperty Name="ID_Постоянное" ColumnName="ID_Постоянное" />
+          <ScalarProperty Name="Кабинет" ColumnName="Кабинет" />
+          <ScalarProperty Name="Учитель" ColumnName="Учитель" />
+          <ScalarProperty Name="ID_ПонедельникП" ColumnName="ID_ПонедельникП" />
+          <ScalarProperty Name="ID_ВторникП" ColumnName="ID_ВторникП" />
+          <ScalarProperty Name="ID_СредаП" ColumnName="ID_СредаП" />
+          <ScalarProperty Name="ID_ЧетвергП" ColumnName="ID_ЧетвергП" />
+          <ScalarProperty Name="ID_ПятницаП" ColumnName="ID_ПятницаП" />
+          <ScalarProperty Name="ID_СубботаП" ColumnName="ID_СубботаП" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Предмет">
+      <EntityTypeMapping TypeName="Model.Предмет">
+        <MappingFragment StoreEntitySet="Предмет">
+          <ScalarProperty Name="ID_Предмета" ColumnName="ID_Предмета" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ПятницаП">
+      <EntityTypeMapping TypeName="Model.ПятницаП">
+        <MappingFragment StoreEntitySet="ПятницаП">
+          <ScalarProperty Name="ID_ПятницаП" ColumnName="ID_ПятницаП" />
+          <ScalarProperty Name="ID_Предмет" ColumnName="ID_Предмет" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Рассписание">
+      <EntityTypeMapping TypeName="Model.Рассписание">
+        <MappingFragment StoreEntitySet="Рассписание">
+          <ScalarProperty Name="ID_Распасания" ColumnName="ID_Распасания" />
+          <ScalarProperty Name="Текущие" ColumnName="Текущие" />
+          <ScalarProperty Name="Временное" ColumnName="Временное" />
+          <ScalarProperty Name="Постоянное" ColumnName="Постоянное" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="СредаП">
+      <EntityTypeMapping TypeName="Model.СредаП">
+        <MappingFragment StoreEntitySet="СредаП">
+          <ScalarProperty Name="ID_СредаП" ColumnName="ID_СредаП" />
+          <ScalarProperty Name="ID_Предмета" ColumnName="ID_Предмета" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="СубботаП">
+      <EntityTypeMapping TypeName="Model.СубботаП">
+        <MappingFragment StoreEntitySet="СубботаП">
+          <ScalarProperty Name="ID_СубботаП" ColumnName="ID_СубботаП" />
+          <ScalarProperty Name="ID_Предмет" ColumnName="ID_Предмет" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Текущие">
+      <EntityTypeMapping TypeName="Model.Текущие">
+        <MappingFragment StoreEntitySet="Текущие">
+          <ScalarProperty Name="ID_Текущие" ColumnName="ID_Текущие" />
+          <ScalarProperty Name="Кабинет" ColumnName="Кабинет" />
+          <ScalarProperty Name="Предмет" ColumnName="Предмет" />
+          <ScalarProperty Name="Учитель" ColumnName="Учитель" />
+          <ScalarProperty Name="Задание" ColumnName="Задание" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Учитель">
+      <EntityTypeMapping TypeName="Model.Учитель">
+        <MappingFragment StoreEntitySet="Учитель">
+          <ScalarProperty Name="ID_Учителя" ColumnName="ID_Учителя" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Основной_предмет" ColumnName="Основной предмет" />
+          <ScalarProperty Name="Фотография" ColumnName="Фотография" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ЧетвергП">
+      <EntityTypeMapping TypeName="Model.ЧетвергП">
+        <MappingFragment StoreEntitySet="ЧетвергП">
+          <ScalarProperty Name="ID_ЧетвергП" ColumnName="ID_ЧетвергП" />
+          <ScalarProperty Name="ID_Предмет" ColumnName="ID_Предмет" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

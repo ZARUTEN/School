@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Авторизация">
+    <Key>
+      <PropertyRef Name="ID_Пользователя" />
+    </Key>
+    <Property Name="ID_Пользователя" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Фио" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Логин" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Пароль" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Префикс" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ВторникН">
+    <Key>
+      <PropertyRef Name="ID_Вторник" />
+    </Key>
+    <Property Name="ID_Вторник" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Начальный_класс" Relationship="Self.FK_Начальный_класс_ВторникН" FromRole="ВторникН" ToRole="Начальный_класс" />
+  </EntityType>
+  <EntityType Name="ВторникС">
+    <Key>
+      <PropertyRef Name="ID_ВторникС" />
+    </Key>
+    <Property Name="ID_ВторникС" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Средний_класс" Relationship="Self.FK_Средний_класс_ВторникС" FromRole="ВторникС" ToRole="Средний_класс" />
+  </EntityType>
+  <EntityType Name="ВторникСТ">
+    <Key>
+      <PropertyRef Name="ID_ВторникСТ" />
+    </Key>
+    <Property Name="ID_ВторникСТ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Старший_класс" Relationship="Self.FK_Старший_класс_ВторникСТ" FromRole="ВторникСТ" ToRole="Старший_класс" />
+  </EntityType>
+  <EntityType Name="Начальный_класс">
+    <Key>
+      <PropertyRef Name="ID_Начальный_Класс" />
+    </Key>
+    <Property Name="ID_Начальный_Класс" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Понедельник" Type="Int32" Nullable="false" />
+    <Property Name="Вторник" Type="Int32" Nullable="false" />
+    <Property Name="Среда" Type="Int32" Nullable="false" />
+    <Property Name="Четверг" Type="Int32" Nullable="false" />
+    <Property Name="Пятница" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ВторникН" Relationship="Self.FK_Начальный_класс_ВторникН" FromRole="Начальный_класс" ToRole="ВторникН" />
+    <NavigationProperty Name="ПонедельникН" Relationship="Self.FK_Начальный_класс_ПонедельникН" FromRole="Начальный_класс" ToRole="ПонедельникН" />
+    <NavigationProperty Name="ПятницаН" Relationship="Self.FK_Начальный_класс_ПятницаН" FromRole="Начальный_класс" ToRole="ПятницаН" />
+    <NavigationProperty Name="СредаН" Relationship="Self.FK_Начальный_класс_СредаН" FromRole="Начальный_класс" ToRole="СредаН" />
+    <NavigationProperty Name="ЧетвергН" Relationship="Self.FK_Начальный_класс_ЧетвергН" FromRole="Начальный_класс" ToRole="ЧетвергН" />
+    <NavigationProperty Name="Постоянное" Relationship="Self.FK_Постоянное_Начальный_класс" FromRole="Начальный_класс" ToRole="Постоянное" />
+  </EntityType>
+  <EntityType Name="ПонедельникН">
+    <Key>
+      <PropertyRef Name="ID_Понедельниик" />
+    </Key>
+    <Property Name="ID_Понедельниик" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Начальный_класс" Relationship="Self.FK_Начальный_класс_ПонедельникН" FromRole="ПонедельникН" ToRole="Начальный_класс" />
+  </EntityType>
+  <EntityType Name="ПонедельникС">
+    <Key>
+      <PropertyRef Name="ID_ПонедельниикС" />
+    </Key>
+    <Property Name="ID_ПонедельниикС" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Средний_класс" Relationship="Self.FK_Средний_класс_ПонедельникС" FromRole="ПонедельникС" ToRole="Средний_класс" />
+  </EntityType>
+  <EntityType Name="ПонедельникСТ">
+    <Key>
+      <PropertyRef Name="ID_ПонедельниикСТ" />
+    </Key>
+    <Property Name="ID_ПонедельниикСТ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Старший_класс" Relationship="Self.FK_Старший_класс_ПонедельникСТ" FromRole="ПонедельникСТ" ToRole="Старший_класс" />
+  </EntityType>
+  <EntityType Name="Постоянное">
+    <Key>
+      <PropertyRef Name="ID_Постоянное" />
+    </Key>
+    <Property Name="ID_Постоянное" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Начальный_класс" Type="Int32" Nullable="false" />
+    <Property Name="Средний_класс" Type="Int32" Nullable="false" />
+    <Property Name="Старший_класс" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Начальный_класс1" Relationship="Self.FK_Постоянное_Начальный_класс" FromRole="Постоянное" ToRole="Начальный_класс" />
+    <NavigationProperty Name="Средний_класс1" Relationship="Self.FK_Постоянное_Средний_класс" FromRole="Постоянное" ToRole="Средний_класс" />
+    <NavigationProperty Name="Старший_класс1" Relationship="Self.FK_Постоянное_Старший_класс" FromRole="Постоянное" ToRole="Старший_класс" />
+  </EntityType>
+  <EntityType Name="Предмет1">
+    <Key>
+      <PropertyRef Name="ID_Предмет" />
+    </Key>
+    <Property Name="ID_Предмет" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Предмет" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ПятницаН">
+    <Key>
+      <PropertyRef Name="ID_Пятница" />
+    </Key>
+    <Property Name="ID_Пятница" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Начальный_класс" Relationship="Self.FK_Начальный_класс_ПятницаН" FromRole="ПятницаН" ToRole="Начальный_класс" />
+  </EntityType>
+  <EntityType Name="ПятницаС">
+    <Key>
+      <PropertyRef Name="ID_ПятницаС" />
+    </Key>
+    <Property Name="ID_ПятницаС" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Средний_класс" Relationship="Self.FK_Средний_класс_ПятницаС" FromRole="ПятницаС" ToRole="Средний_класс" />
+  </EntityType>
+  <EntityType Name="ПятницаСТ">
+    <Key>
+      <PropertyRef Name="ID_ПятницаСТ" />
+    </Key>
+    <Property Name="ID_ПятницаСТ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Старший_класс" Relationship="Self.FK_Старший_класс_ПятницаСТ" FromRole="ПятницаСТ" ToRole="Старший_класс" />
+  </EntityType>
+  <EntityType Name="СредаН">
+    <Key>
+      <PropertyRef Name="ID_Среда" />
+    </Key>
+    <Property Name="ID_Среда" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Начальный_класс" Relationship="Self.FK_Начальный_класс_СредаН" FromRole="СредаН" ToRole="Начальный_класс" />
+  </EntityType>
+  <EntityType Name="СредаС">
+    <Key>
+      <PropertyRef Name="ID_СредаС" />
+    </Key>
+    <Property Name="ID_СредаС" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Средний_класс" Relationship="Self.FK_Средний_класс_СредаС" FromRole="СредаС" ToRole="Средний_класс" />
+  </EntityType>
+  <EntityType Name="СредаСТ">
+    <Key>
+      <PropertyRef Name="ID_СредаСТ" />
+    </Key>
+    <Property Name="ID_СредаСТ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Старший_класс" Relationship="Self.FK_Старший_класс_СредаСТ" FromRole="СредаСТ" ToRole="Старший_класс" />
+  </EntityType>
+  <EntityType Name="Средний_класс">
+    <Key>
+      <PropertyRef Name="ID_Средний_Класс" />
+    </Key>
+    <Property Name="ID_Средний_Класс" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Понедельник" Type="Int32" Nullable="false" />
+    <Property Name="Вторник" Type="Int32" Nullable="false" />
+    <Property Name="Среда" Type="Int32" Nullable="false" />
+    <Property Name="Четверг" Type="Int32" Nullable="false" />
+    <Property Name="Пятница" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ВторникС" Relationship="Self.FK_Средний_класс_ВторникС" FromRole="Средний_класс" ToRole="ВторникС" />
+    <NavigationProperty Name="ПонедельникС" Relationship="Self.FK_Средний_класс_ПонедельникС" FromRole="Средний_класс" ToRole="ПонедельникС" />
+    <NavigationProperty Name="Постоянное" Relationship="Self.FK_Постоянное_Средний_класс" FromRole="Средний_класс" ToRole="Постоянное" />
+    <NavigationProperty Name="ПятницаС" Relationship="Self.FK_Средний_класс_ПятницаС" FromRole="Средний_класс" ToRole="ПятницаС" />
+    <NavigationProperty Name="СредаС" Relationship="Self.FK_Средний_класс_СредаС" FromRole="Средний_класс" ToRole="СредаС" />
+    <NavigationProperty Name="ЧетвергС" Relationship="Self.FK_Средний_класс_ЧетвергС" FromRole="Средний_класс" ToRole="ЧетвергС" />
+  </EntityType>
+  <EntityType Name="Старший_класс">
+    <Key>
+      <PropertyRef Name="ID_Старший_Класс" />
+    </Key>
+    <Property Name="ID_Старший_Класс" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Понедельник" Type="Int32" Nullable="false" />
+    <Property Name="Вторник" Type="Int32" Nullable="false" />
+    <Property Name="Среда" Type="Int32" Nullable="false" />
+    <Property Name="Четверг" Type="Int32" Nullable="false" />
+    <Property Name="Пятница" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ВторникСТ" Relationship="Self.FK_Старший_класс_ВторникСТ" FromRole="Старший_класс" ToRole="ВторникСТ" />
+    <NavigationProperty Name="ПонедельникСТ" Relationship="Self.FK_Старший_класс_ПонедельникСТ" FromRole="Старший_класс" ToRole="ПонедельникСТ" />
+    <NavigationProperty Name="Постоянное" Relationship="Self.FK_Постоянное_Старший_класс" FromRole="Старший_класс" ToRole="Постоянное" />
+    <NavigationProperty Name="ПятницаСТ" Relationship="Self.FK_Старший_класс_ПятницаСТ" FromRole="Старший_класс" ToRole="ПятницаСТ" />
+    <NavigationProperty Name="СредаСТ" Relationship="Self.FK_Старший_класс_СредаСТ" FromRole="Старший_класс" ToRole="СредаСТ" />
+    <NavigationProperty Name="ЧетвергСТ" Relationship="Self.FK_Старший_класс_ЧетвергСТ" FromRole="Старший_класс" ToRole="ЧетвергСТ" />
+  </EntityType>
+  <EntityType Name="ЧетвергН">
+    <Key>
+      <PropertyRef Name="ID_ЧетвергН" />
+    </Key>
+    <Property Name="ID_ЧетвергН" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Начальный_класс" Relationship="Self.FK_Начальный_класс_ЧетвергН" FromRole="ЧетвергН" ToRole="Начальный_класс" />
+  </EntityType>
+  <EntityType Name="ЧетвергС">
+    <Key>
+      <PropertyRef Name="ID_ЧетвергС" />
+    </Key>
+    <Property Name="ID_ЧетвергС" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Средний_класс" Relationship="Self.FK_Средний_класс_ЧетвергС" FromRole="ЧетвергС" ToRole="Средний_класс" />
+  </EntityType>
+  <EntityType Name="ЧетвергСТ">
+    <Key>
+      <PropertyRef Name="ID_Четверг" />
+    </Key>
+    <Property Name="ID_Четверг" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Кабинет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Предмет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Учитель" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Старший_класс" Relationship="Self.FK_Старший_класс_ЧетвергСТ" FromRole="ЧетвергСТ" ToRole="Старший_класс" />
+  </EntityType>
+  <Association Name="FK_Начальный_класс_ВторникН">
+    <End Role="ВторникН" Type="Self.ВторникН" Multiplicity="1" />
+    <End Role="Начальный_класс" Type="Self.Начальный_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ВторникН">
+        <PropertyRef Name="ID_Вторник" />
+      </Principal>
+      <Dependent Role="Начальный_класс">
+        <PropertyRef Name="Вторник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Средний_класс_ВторникС">
+    <End Role="ВторникС" Type="Self.ВторникС" Multiplicity="1" />
+    <End Role="Средний_класс" Type="Self.Средний_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ВторникС">
+        <PropertyRef Name="ID_ВторникС" />
+      </Principal>
+      <Dependent Role="Средний_класс">
+        <PropertyRef Name="Вторник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Старший_класс_ВторникСТ">
+    <End Role="ВторникСТ" Type="Self.ВторникСТ" Multiplicity="1" />
+    <End Role="Старший_класс" Type="Self.Старший_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ВторникСТ">
+        <PropertyRef Name="ID_ВторникСТ" />
+      </Principal>
+      <Dependent Role="Старший_класс">
+        <PropertyRef Name="Вторник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Начальный_класс_ПонедельникН">
+    <End Role="ПонедельникН" Type="Self.ПонедельникН" Multiplicity="1" />
+    <End Role="Начальный_класс" Type="Self.Начальный_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПонедельникН">
+        <PropertyRef Name="ID_Понедельниик" />
+      </Principal>
+      <Dependent Role="Начальный_класс">
+        <PropertyRef Name="Понедельник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Начальный_класс_ПятницаН">
+    <End Role="ПятницаН" Type="Self.ПятницаН" Multiplicity="1" />
+    <End Role="Начальный_класс" Type="Self.Начальный_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПятницаН">
+        <PropertyRef Name="ID_Пятница" />
+      </Principal>
+      <Dependent Role="Начальный_класс">
+        <PropertyRef Name="Пятница" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Начальный_класс_СредаН">
+    <End Role="СредаН" Type="Self.СредаН" Multiplicity="1" />
+    <End Role="Начальный_класс" Type="Self.Начальный_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="СредаН">
+        <PropertyRef Name="ID_Среда" />
+      </Principal>
+      <Dependent Role="Начальный_класс">
+        <PropertyRef Name="Среда" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Начальный_класс_ЧетвергН">
+    <End Role="ЧетвергН" Type="Self.ЧетвергН" Multiplicity="1" />
+    <End Role="Начальный_класс" Type="Self.Начальный_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ЧетвергН">
+        <PropertyRef Name="ID_ЧетвергН" />
+      </Principal>
+      <Dependent Role="Начальный_класс">
+        <PropertyRef Name="Четверг" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_Начальный_класс">
+    <End Role="Начальный_класс" Type="Self.Начальный_класс" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Начальный_класс">
+        <PropertyRef Name="ID_Начальный_Класс" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="Начальный_класс" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Средний_класс_ПонедельникС">
+    <End Role="ПонедельникС" Type="Self.ПонедельникС" Multiplicity="1" />
+    <End Role="Средний_класс" Type="Self.Средний_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПонедельникС">
+        <PropertyRef Name="ID_ПонедельниикС" />
+      </Principal>
+      <Dependent Role="Средний_класс">
+        <PropertyRef Name="Понедельник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Старший_класс_ПонедельникСТ">
+    <End Role="ПонедельникСТ" Type="Self.ПонедельникСТ" Multiplicity="1" />
+    <End Role="Старший_класс" Type="Self.Старший_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПонедельникСТ">
+        <PropertyRef Name="ID_ПонедельниикСТ" />
+      </Principal>
+      <Dependent Role="Старший_класс">
+        <PropertyRef Name="Понедельник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_Средний_класс">
+    <End Role="Средний_класс" Type="Self.Средний_класс" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Средний_класс">
+        <PropertyRef Name="ID_Средний_Класс" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="Средний_класс" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_Старший_класс">
+    <End Role="Старший_класс" Type="Self.Старший_класс" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Старший_класс">
+        <PropertyRef Name="ID_Старший_Класс" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="Старший_класс" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Средний_класс_ПятницаС">
+    <End Role="ПятницаС" Type="Self.ПятницаС" Multiplicity="1" />
+    <End Role="Средний_класс" Type="Self.Средний_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПятницаС">
+        <PropertyRef Name="ID_ПятницаС" />
+      </Principal>
+      <Dependent Role="Средний_класс">
+        <PropertyRef Name="Пятница" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Старший_класс_ПятницаСТ">
+    <End Role="ПятницаСТ" Type="Self.ПятницаСТ" Multiplicity="1" />
+    <End Role="Старший_класс" Type="Self.Старший_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПятницаСТ">
+        <PropertyRef Name="ID_ПятницаСТ" />
+      </Principal>
+      <Dependent Role="Старший_класс">
+        <PropertyRef Name="Пятница" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Средний_класс_СредаС">
+    <End Role="СредаС" Type="Self.СредаС" Multiplicity="1" />
+    <End Role="Средний_класс" Type="Self.Средний_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="СредаС">
+        <PropertyRef Name="ID_СредаС" />
+      </Principal>
+      <Dependent Role="Средний_класс">
+        <PropertyRef Name="Среда" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Старший_класс_СредаСТ">
+    <End Role="СредаСТ" Type="Self.СредаСТ" Multiplicity="1" />
+    <End Role="Старший_класс" Type="Self.Старший_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="СредаСТ">
+        <PropertyRef Name="ID_СредаСТ" />
+      </Principal>
+      <Dependent Role="Старший_класс">
+        <PropertyRef Name="Среда" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Средний_класс_ЧетвергС">
+    <End Role="ЧетвергС" Type="Self.ЧетвергС" Multiplicity="1" />
+    <End Role="Средний_класс" Type="Self.Средний_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ЧетвергС">
+        <PropertyRef Name="ID_ЧетвергС" />
+      </Principal>
+      <Dependent Role="Средний_класс">
+        <PropertyRef Name="Четверг" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Старший_класс_ЧетвергСТ">
+    <End Role="ЧетвергСТ" Type="Self.ЧетвергСТ" Multiplicity="1" />
+    <End Role="Старший_класс" Type="Self.Старший_класс" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ЧетвергСТ">
+        <PropertyRef Name="ID_Четверг" />
+      </Principal>
+      <Dependent Role="Старший_класс">
+        <PropertyRef Name="Четверг" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Авторизация" EntityType="Self.Авторизация" />
+    <EntitySet Name="ВторникН" EntityType="Self.ВторникН" />
+    <EntitySet Name="ВторникС" EntityType="Self.ВторникС" />
+    <EntitySet Name="ВторникСТ" EntityType="Self.ВторникСТ" />
+    <EntitySet Name="Начальный_класс" EntityType="Self.Начальный_класс" />
+    <EntitySet Name="ПонедельникН" EntityType="Self.ПонедельникН" />
+    <EntitySet Name="ПонедельникС" EntityType="Self.ПонедельникС" />
+    <EntitySet Name="ПонедельникСТ" EntityType="Self.ПонедельникСТ" />
+    <EntitySet Name="Постоянное" EntityType="Self.Постоянное" />
+    <EntitySet Name="Предмет1" EntityType="Self.Предмет1" />
+    <EntitySet Name="ПятницаН" EntityType="Self.ПятницаН" />
+    <EntitySet Name="ПятницаС" EntityType="Self.ПятницаС" />
+    <EntitySet Name="ПятницаСТ" EntityType="Self.ПятницаСТ" />
+    <EntitySet Name="СредаН" EntityType="Self.СредаН" />
+    <EntitySet Name="СредаС" EntityType="Self.СредаС" />
+    <EntitySet Name="СредаСТ" EntityType="Self.СредаСТ" />
+    <EntitySet Name="Средний_класс" EntityType="Self.Средний_класс" />
+    <EntitySet Name="Старший_класс" EntityType="Self.Старший_класс" />
+    <EntitySet Name="ЧетвергН" EntityType="Self.ЧетвергН" />
+    <EntitySet Name="ЧетвергС" EntityType="Self.ЧетвергС" />
+    <EntitySet Name="ЧетвергСТ" EntityType="Self.ЧетвергСТ" />
+    <AssociationSet Name="FK_Начальный_класс_ВторникН" Association="Self.FK_Начальный_класс_ВторникН">
+      <End Role="ВторникН" EntitySet="ВторникН" />
+      <End Role="Начальный_класс" EntitySet="Начальный_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Средний_класс_ВторникС" Association="Self.FK_Средний_класс_ВторникС">
+      <End Role="ВторникС" EntitySet="ВторникС" />
+      <End Role="Средний_класс" EntitySet="Средний_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Старший_класс_ВторникСТ" Association="Self.FK_Старший_класс_ВторникСТ">
+      <End Role="ВторникСТ" EntitySet="ВторникСТ" />
+      <End Role="Старший_класс" EntitySet="Старший_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Начальный_класс_ПонедельникН" Association="Self.FK_Начальный_класс_ПонедельникН">
+      <End Role="ПонедельникН" EntitySet="ПонедельникН" />
+      <End Role="Начальный_класс" EntitySet="Начальный_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Начальный_класс_ПятницаН" Association="Self.FK_Начальный_класс_ПятницаН">
+      <End Role="ПятницаН" EntitySet="ПятницаН" />
+      <End Role="Начальный_класс" EntitySet="Начальный_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Начальный_класс_СредаН" Association="Self.FK_Начальный_класс_СредаН">
+      <End Role="СредаН" EntitySet="СредаН" />
+      <End Role="Начальный_класс" EntitySet="Начальный_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Начальный_класс_ЧетвергН" Association="Self.FK_Начальный_класс_ЧетвергН">
+      <End Role="ЧетвергН" EntitySet="ЧетвергН" />
+      <End Role="Начальный_класс" EntitySet="Начальный_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_Начальный_класс" Association="Self.FK_Постоянное_Начальный_класс">
+      <End Role="Начальный_класс" EntitySet="Начальный_класс" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Средний_класс_ПонедельникС" Association="Self.FK_Средний_класс_ПонедельникС">
+      <End Role="ПонедельникС" EntitySet="ПонедельникС" />
+      <End Role="Средний_класс" EntitySet="Средний_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Старший_класс_ПонедельникСТ" Association="Self.FK_Старший_класс_ПонедельникСТ">
+      <End Role="ПонедельникСТ" EntitySet="ПонедельникСТ" />
+      <End Role="Старший_класс" EntitySet="Старший_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_Средний_класс" Association="Self.FK_Постоянное_Средний_класс">
+      <End Role="Средний_класс" EntitySet="Средний_класс" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_Старший_класс" Association="Self.FK_Постоянное_Старший_класс">
+      <End Role="Старший_класс" EntitySet="Старший_класс" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Средний_класс_ПятницаС" Association="Self.FK_Средний_класс_ПятницаС">
+      <End Role="ПятницаС" EntitySet="ПятницаС" />
+      <End Role="Средний_класс" EntitySet="Средний_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Старший_класс_ПятницаСТ" Association="Self.FK_Старший_класс_ПятницаСТ">
+      <End Role="ПятницаСТ" EntitySet="ПятницаСТ" />
+      <End Role="Старший_класс" EntitySet="Старший_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Средний_класс_СредаС" Association="Self.FK_Средний_класс_СредаС">
+      <End Role="СредаС" EntitySet="СредаС" />
+      <End Role="Средний_класс" EntitySet="Средний_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Старший_класс_СредаСТ" Association="Self.FK_Старший_класс_СредаСТ">
+      <End Role="СредаСТ" EntitySet="СредаСТ" />
+      <End Role="Старший_класс" EntitySet="Старший_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Средний_класс_ЧетвергС" Association="Self.FK_Средний_класс_ЧетвергС">
+      <End Role="ЧетвергС" EntitySet="ЧетвергС" />
+      <End Role="Средний_класс" EntitySet="Средний_класс" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Старший_класс_ЧетвергСТ" Association="Self.FK_Старший_класс_ЧетвергСТ">
+      <End Role="ЧетвергСТ" EntitySet="ЧетвергСТ" />
+      <End Role="Старший_класс" EntitySet="Старший_класс" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

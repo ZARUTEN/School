@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Авторизация">
+    <Key>
+      <PropertyRef Name="ID_Пользователя" />
+    </Key>
+    <Property Name="ID_Пользователя" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Логин" Type="nchar" MaxLength="100" />
+    <Property Name="Пароль" Type="nchar" MaxLength="100" />
+    <Property Name="Префикс" Type="nchar" MaxLength="100" />
+    <Property Name="Фотография" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Временное">
+    <Key>
+      <PropertyRef Name="ID_Временной" />
+    </Key>
+    <Property Name="ID_Временной" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="int" Nullable="false" />
+    <Property Name="Предмет" Type="int" Nullable="false" />
+    <Property Name="Учитель" Type="int" Nullable="false" />
+    <Property Name="Задание" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ВторникП">
+    <Key>
+      <PropertyRef Name="ID_ВторникП" />
+    </Key>
+    <Property Name="ID_ВторникП" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Предмета" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Задание">
+    <Key>
+      <PropertyRef Name="ID_Задания" />
+    </Key>
+    <Property Name="ID_Задания" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Задание" Type="nchar" MaxLength="100" />
+    <Property Name="ID_Предмета" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Кабинет">
+    <Key>
+      <PropertyRef Name="ID_Кабинета" />
+    </Key>
+    <Property Name="ID_Кабинета" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Категория" Type="nchar" MaxLength="100" />
+    <Property Name="Номер" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ПонедельникП">
+    <Key>
+      <PropertyRef Name="ID_ПонедельникП" />
+    </Key>
+    <Property Name="ID_ПонедельникП" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Предмета" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Постоянное">
+    <Key>
+      <PropertyRef Name="ID_Постоянное" />
+    </Key>
+    <Property Name="ID_Постоянное" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="int" Nullable="false" />
+    <Property Name="Учитель" Type="int" Nullable="false" />
+    <Property Name="ID_ПонедельникП" Type="int" Nullable="false" />
+    <Property Name="ID_ВторникП" Type="int" Nullable="false" />
+    <Property Name="ID_СредаП" Type="int" Nullable="false" />
+    <Property Name="ID_ЧетвергП" Type="int" Nullable="false" />
+    <Property Name="ID_ПятницаП" Type="int" Nullable="false" />
+    <Property Name="ID_СубботаП" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Предмет">
+    <Key>
+      <PropertyRef Name="ID_Предмета" />
+    </Key>
+    <Property Name="ID_Предмета" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Название" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ПятницаП">
+    <Key>
+      <PropertyRef Name="ID_ПятницаП" />
+    </Key>
+    <Property Name="ID_ПятницаП" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Предмет" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Рассписание">
+    <Key>
+      <PropertyRef Name="ID_Распасания" />
+    </Key>
+    <Property Name="ID_Распасания" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Текущие" Type="int" Nullable="false" />
+    <Property Name="Временное" Type="int" Nullable="false" />
+    <Property Name="Постоянное" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="СредаП">
+    <Key>
+      <PropertyRef Name="ID_СредаП" />
+    </Key>
+    <Property Name="ID_СредаП" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Предмета" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="СубботаП">
+    <Key>
+      <PropertyRef Name="ID_СубботаП" />
+    </Key>
+    <Property Name="ID_СубботаП" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Предмет" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Текущие">
+    <Key>
+      <PropertyRef Name="ID_Текущие" />
+    </Key>
+    <Property Name="ID_Текущие" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Кабинет" Type="int" Nullable="false" />
+    <Property Name="Предмет" Type="int" Nullable="false" />
+    <Property Name="Учитель" Type="int" Nullable="false" />
+    <Property Name="Задание" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Учитель">
+    <Key>
+      <PropertyRef Name="ID_Учителя" />
+    </Key>
+    <Property Name="ID_Учителя" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Фамилия" Type="nchar" MaxLength="100" />
+    <Property Name="Имя" Type="nchar" MaxLength="100" />
+    <Property Name="Отчество" Type="nchar" MaxLength="100" />
+    <Property Name="Основной предмет" Type="nchar" MaxLength="100" />
+    <Property Name="Фотография" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ЧетвергП">
+    <Key>
+      <PropertyRef Name="ID_ЧетвергП" />
+    </Key>
+    <Property Name="ID_ЧетвергП" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Предмет" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Временное_Задание">
+    <End Role="Задание" Type="Self.Задание" Multiplicity="1" />
+    <End Role="Временное" Type="Self.Временное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Задание">
+        <PropertyRef Name="ID_Задания" />
+      </Principal>
+      <Dependent Role="Временное">
+        <PropertyRef Name="Задание" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Временное_Кабинет">
+    <End Role="Кабинет" Type="Self.Кабинет" Multiplicity="1" />
+    <End Role="Временное" Type="Self.Временное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Кабинет">
+        <PropertyRef Name="ID_Кабинета" />
+      </Principal>
+      <Dependent Role="Временное">
+        <PropertyRef Name="Кабинет" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Временное_Предмет">
+    <End Role="Предмет" Type="Self.Предмет" Multiplicity="1" />
+    <End Role="Временное" Type="Self.Временное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Предмет">
+        <PropertyRef Name="ID_Предмета" />
+      </Principal>
+      <Dependent Role="Временное">
+        <PropertyRef Name="Предмет" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Временное_Учитель">
+    <End Role="Учитель" Type="Self.Учитель" Multiplicity="1" />
+    <End Role="Временное" Type="Self.Временное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Учитель">
+        <PropertyRef Name="ID_Учителя" />
+      </Principal>
+      <Dependent Role="Временное">
+        <PropertyRef Name="Учитель" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ВторникП_Предмет">
+    <End Role="Предмет" Type="Self.Предмет" Multiplicity="1" />
+    <End Role="ВторникП" Type="Self.ВторникП" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Предмет">
+        <PropertyRef Name="ID_Предмета" />
+      </Principal>
+      <Dependent Role="ВторникП">
+        <PropertyRef Name="ID_Предмета" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Задание_Предмет">
+    <End Role="Предмет" Type="Self.Предмет" Multiplicity="1" />
+    <End Role="Задание" Type="Self.Задание" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Предмет">
+        <PropertyRef Name="ID_Предмета" />
+      </Principal>
+      <Dependent Role="Задание">
+        <PropertyRef Name="ID_Предмета" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ПонедельникП_Предмет">
+    <End Role="Предмет" Type="Self.Предмет" Multiplicity="1" />
+    <End Role="ПонедельникП" Type="Self.ПонедельникП" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Предмет">
+        <PropertyRef Name="ID_Предмета" />
+      </Principal>
+      <Dependent Role="ПонедельникП">
+        <PropertyRef Name="ID_Предмета" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_ВторникП">
+    <End Role="ВторникП" Type="Self.ВторникП" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ВторникП">
+        <PropertyRef Name="ID_ВторникП" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="ID_ВторникП" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_Кабинет">
+    <End Role="Кабинет" Type="Self.Кабинет" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Кабинет">
+        <PropertyRef Name="ID_Кабинета" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="Кабинет" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_ПонедельникП">
+    <End Role="ПонедельникП" Type="Self.ПонедельникП" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПонедельникП">
+        <PropertyRef Name="ID_ПонедельникП" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="ID_ПонедельникП" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_ПятницаП">
+    <End Role="ПятницаП" Type="Self.ПятницаП" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ПятницаП">
+        <PropertyRef Name="ID_ПятницаП" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="ID_ПятницаП" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_СредаП">
+    <End Role="СредаП" Type="Self.СредаП" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="СредаП">
+        <PropertyRef Name="ID_СредаП" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="ID_СредаП" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_СубботаП">
+    <End Role="СубботаП" Type="Self.СубботаП" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="СубботаП">
+        <PropertyRef Name="ID_СубботаП" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="ID_СубботаП" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_Учитель">
+    <End Role="Учитель" Type="Self.Учитель" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Учитель">
+        <PropertyRef Name="ID_Учителя" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="Учитель" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Постоянное_ЧетвергП">
+    <End Role="ЧетвергП" Type="Self.ЧетвергП" Multiplicity="1" />
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ЧетвергП">
+        <PropertyRef Name="ID_ЧетвергП" />
+      </Principal>
+      <Dependent Role="Постоянное">
+        <PropertyRef Name="ID_ЧетвергП" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ПятницаП_Предмет">
+    <End Role="Предмет" Type="Self.Предмет" Multiplicity="1" />
+    <End Role="ПятницаП" Type="Self.ПятницаП" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Предмет">
+        <PropertyRef Name="ID_Предмета" />
+      </Principal>
+      <Dependent Role="ПятницаП">
+        <PropertyRef Name="ID_Предмет" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Рассписание_Временное">
+    <End Role="Временное" Type="Self.Временное" Multiplicity="1" />
+    <End Role="Рассписание" Type="Self.Рассписание" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Временное">
+        <PropertyRef Name="ID_Временной" />
+      </Principal>
+      <Dependent Role="Рассписание">
+        <PropertyRef Name="Временное" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Рассписание_Постоянное">
+    <End Role="Постоянное" Type="Self.Постоянное" Multiplicity="1" />
+    <End Role="Рассписание" Type="Self.Рассписание" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Постоянное">
+        <PropertyRef Name="ID_Постоянное" />
+      </Principal>
+      <Dependent Role="Рассписание">
+        <PropertyRef Name="Постоянное" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Рассписание_Текущие">
+    <End Role="Текущие" Type="Self.Текущие" Multiplicity="1" />
+    <End Role="Рассписание" Type="Self.Рассписание" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Текущие">
+        <PropertyRef Name="ID_Текущие" />
+      </Principal>
+      <Dependent Role="Рассписание">
+        <PropertyRef Name="Текущие" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_СредаП_Предмет">
+    <End Role="Предмет" Type="Self.Предмет" Multiplicity="1" />
+    <End Role="СредаП" Type="Self.СредаП" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Предмет">
+        <PropertyRef Name="ID_Предмета" />
+      </Principal>
+      <Dependent Role="СредаП">
+        <PropertyRef Name="ID_Предмета" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_СубботаП_Предмет">
+    <End Role="Предмет" Type="Self.Предмет" Multiplicity="1" />
+    <End Role="СубботаП" Type="Self.СубботаП" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Предмет">
+        <PropertyRef Name="ID_Предмета" />
+      </Principal>
+      <Dependent Role="СубботаП">
+        <PropertyRef Name="ID_Предмет" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Текущие_Задание">
+    <End Role="Задание" Type="Self.Задание" Multiplicity="1" />
+    <End Role="Текущие" Type="Self.Текущие" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Задание">
+        <PropertyRef Name="ID_Задания" />
+      </Principal>
+      <Dependent Role="Текущие">
+        <PropertyRef Name="Задание" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Текущие_Кабинет">
+    <End Role="Кабинет" Type="Self.Кабинет" Multiplicity="1" />
+    <End Role="Текущие" Type="Self.Текущие" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Кабинет">
+        <PropertyRef Name="ID_Кабинета" />
+      </Principal>
+      <Dependent Role="Текущие">
+        <PropertyRef Name="Кабинет" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Текущие_Предмет">
+    <End Role="Предмет" Type="Self.Предмет" Multiplicity="1" />
+    <End Role="Текущие" Type="Self.Текущие" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Предмет">
+        <PropertyRef Name="ID_Предмета" />
+      </Principal>
+      <Dependent Role="Текущие">
+        <PropertyRef Name="Предмет" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Текущие_Учитель">
+    <End Role="Учитель" Type="Self.Учитель" Multiplicity="1" />
+    <End Role="Текущие" Type="Self.Текущие" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Учитель">
+        <PropertyRef Name="ID_Учителя" />
+      </Principal>
+      <Dependent Role="Текущие">
+        <PropertyRef Name="Учитель" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ЧетвергП_Предмет">
+    <End Role="Предмет" Type="Self.Предмет" Multiplicity="1" />
+    <End Role="ЧетвергП" Type="Self.ЧетвергП" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Предмет">
+        <PropertyRef Name="ID_Предмета" />
+      </Principal>
+      <Dependent Role="ЧетвергП">
+        <PropertyRef Name="ID_Предмет" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ModelContainer">
+    <EntitySet Name="Авторизация" EntityType="Self.Авторизация" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Временное" EntityType="Self.Временное" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ВторникП" EntityType="Self.ВторникП" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Задание" EntityType="Self.Задание" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Кабинет" EntityType="Self.Кабинет" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ПонедельникП" EntityType="Self.ПонедельникП" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Постоянное" EntityType="Self.Постоянное" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Предмет" EntityType="Self.Предмет" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ПятницаП" EntityType="Self.ПятницаП" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Рассписание" EntityType="Self.Рассписание" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="СредаП" EntityType="Self.СредаП" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="СубботаП" EntityType="Self.СубботаП" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Текущие" EntityType="Self.Текущие" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Учитель" EntityType="Self.Учитель" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ЧетвергП" EntityType="Self.ЧетвергП" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Временное_Задание" Association="Self.FK_Временное_Задание">
+      <End Role="Задание" EntitySet="Задание" />
+      <End Role="Временное" EntitySet="Временное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Временное_Кабинет" Association="Self.FK_Временное_Кабинет">
+      <End Role="Кабинет" EntitySet="Кабинет" />
+      <End Role="Временное" EntitySet="Временное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Временное_Предмет" Association="Self.FK_Временное_Предмет">
+      <End Role="Предмет" EntitySet="Предмет" />
+      <End Role="Временное" EntitySet="Временное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Временное_Учитель" Association="Self.FK_Временное_Учитель">
+      <End Role="Учитель" EntitySet="Учитель" />
+      <End Role="Временное" EntitySet="Временное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ВторникП_Предмет" Association="Self.FK_ВторникП_Предмет">
+      <End Role="Предмет" EntitySet="Предмет" />
+      <End Role="ВторникП" EntitySet="ВторникП" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Задание_Предмет" Association="Self.FK_Задание_Предмет">
+      <End Role="Предмет" EntitySet="Предмет" />
+      <End Role="Задание" EntitySet="Задание" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ПонедельникП_Предмет" Association="Self.FK_ПонедельникП_Предмет">
+      <End Role="Предмет" EntitySet="Предмет" />
+      <End Role="ПонедельникП" EntitySet="ПонедельникП" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_ВторникП" Association="Self.FK_Постоянное_ВторникП">
+      <End Role="ВторникП" EntitySet="ВторникП" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_Кабинет" Association="Self.FK_Постоянное_Кабинет">
+      <End Role="Кабинет" EntitySet="Кабинет" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_ПонедельникП" Association="Self.FK_Постоянное_ПонедельникП">
+      <End Role="ПонедельникП" EntitySet="ПонедельникП" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_ПятницаП" Association="Self.FK_Постоянное_ПятницаП">
+      <End Role="ПятницаП" EntitySet="ПятницаП" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_СредаП" Association="Self.FK_Постоянное_СредаП">
+      <End Role="СредаП" EntitySet="СредаП" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_СубботаП" Association="Self.FK_Постоянное_СубботаП">
+      <End Role="СубботаП" EntitySet="СубботаП" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_Учитель" Association="Self.FK_Постоянное_Учитель">
+      <End Role="Учитель" EntitySet="Учитель" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Постоянное_ЧетвергП" Association="Self.FK_Постоянное_ЧетвергП">
+      <End Role="ЧетвергП" EntitySet="ЧетвергП" />
+      <End Role="Постоянное" EntitySet="Постоянное" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ПятницаП_Предмет" Association="Self.FK_ПятницаП_Предмет">
+      <End Role="Предмет" EntitySet="Предмет" />
+      <End Role="ПятницаП" EntitySet="ПятницаП" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Рассписание_Временное" Association="Self.FK_Рассписание_Временное">
+      <End Role="Временное" EntitySet="Временное" />
+      <End Role="Рассписание" EntitySet="Рассписание" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Рассписание_Постоянное" Association="Self.FK_Рассписание_Постоянное">
+      <End Role="Постоянное" EntitySet="Постоянное" />
+      <End Role="Рассписание" EntitySet="Рассписание" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Рассписание_Текущие" Association="Self.FK_Рассписание_Текущие">
+      <End Role="Текущие" EntitySet="Текущие" />
+      <End Role="Рассписание" EntitySet="Рассписание" />
+    </AssociationSet>
+    <AssociationSet Name="FK_СредаП_Предмет" Association="Self.FK_СредаП_Предмет">
+      <End Role="Предмет" EntitySet="Предмет" />
+      <End Role="СредаП" EntitySet="СредаП" />
+    </AssociationSet>
+    <AssociationSet Name="FK_СубботаП_Предмет" Association="Self.FK_СубботаП_Предмет">
+      <End Role="Предмет" EntitySet="Предмет" />
+      <End Role="СубботаП" EntitySet="СубботаП" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Текущие_Задание" Association="Self.FK_Текущие_Задание">
+      <End Role="Задание" EntitySet="Задание" />
+      <End Role="Текущие" EntitySet="Текущие" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Текущие_Кабинет" Association="Self.FK_Текущие_Кабинет">
+      <End Role="Кабинет" EntitySet="Кабинет" />
+      <End Role="Текущие" EntitySet="Текущие" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Текущие_Предмет" Association="Self.FK_Текущие_Предмет">
+      <End Role="Предмет" EntitySet="Предмет" />
+      <End Role="Текущие" EntitySet="Текущие" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Текущие_Учитель" Association="Self.FK_Текущие_Учитель">
+      <End Role="Учитель" EntitySet="Учитель" />
+      <End Role="Текущие" EntitySet="Текущие" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ЧетвергП_Предмет" Association="Self.FK_ЧетвергП_Предмет">
+      <End Role="Предмет" EntitySet="Предмет" />
+      <End Role="ЧетвергП" EntitySet="ЧетвергП" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

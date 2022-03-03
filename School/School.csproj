@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CCA80EA-3109-4B63-B9EB-613DAE939ED1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>School</RootNamespace>
+    <AssemblyName>School</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Class1.cs" />
+    <Compile Include="konec.xaml.cs">
+      <DependentUpon>konec.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRed.xaml.cs">
+      <DependentUpon>konecRed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRedC.xaml.cs">
+      <DependentUpon>konecRedC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRedCadd.xaml.cs">
+      <DependentUpon>konecRedCadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRedP.xaml.cs">
+      <DependentUpon>konecRedP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRedPadd.xaml.cs">
+      <DependentUpon>konecRedPadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRedPyat.xaml.cs">
+      <DependentUpon>konecRedPyat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRedPyatAdd.xaml.cs">
+      <DependentUpon>konecRedPyatAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRedS.xaml.cs">
+      <DependentUpon>konecRedS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRedSadd.xaml.cs">
+      <DependentUpon>konecRedSadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRedV.xaml.cs">
+      <DependentUpon>konecRedV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="konecRedVadd.xaml.cs">
+      <DependentUpon>konecRedVadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="mid.xaml.cs">
+      <DependentUpon>mid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRed.xaml.cs">
+      <DependentUpon>midRed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRedC.xaml.cs">
+      <DependentUpon>midRedC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRedCadd.xaml.cs">
+      <DependentUpon>midRedCadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRedP.xaml.cs">
+      <DependentUpon>midRedP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRedPadd.xaml.cs">
+      <DependentUpon>midRedPadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRedPyat.xaml.cs">
+      <DependentUpon>midRedPyat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRedPyatAdd.xaml.cs">
+      <DependentUpon>midRedPyatAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRedS.xaml.cs">
+      <DependentUpon>midRedS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRedSadd.xaml.cs">
+      <DependentUpon>midRedSadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRedV.xaml.cs">
+      <DependentUpon>midRedV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="midRedVadd.xaml.cs">
+      <DependentUpon>midRedVadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nach.xaml.cs">
+      <DependentUpon>Nach.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachINFO.xaml.cs">
+      <DependentUpon>NachINFO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRed.xaml.cs">
+      <DependentUpon>NachRed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRedCadd.xaml.cs">
+      <DependentUpon>NachRedCadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRedP.xaml.cs">
+      <DependentUpon>NachRedP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRedPadd.xaml.cs">
+      <DependentUpon>NachRedPadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRedPyat.xaml.cs">
+      <DependentUpon>NachRedPyat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRedPyatAdd.xaml.cs">
+      <DependentUpon>NachRedPyatAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRedS.xaml.cs">
+      <DependentUpon>NachRedS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRedSadd.xaml.cs">
+      <DependentUpon>NachRedSadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRedV.xaml.cs">
+      <DependentUpon>NachRedV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRedVadd.xaml.cs">
+      <DependentUpon>NachRedVadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NachRedС.xaml.cs">
+      <DependentUpon>NachRedС.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Owner.xaml.cs">
+      <DependentUpon>Owner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Privet.xaml.cs">
+      <DependentUpon>Privet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterADD.xaml.cs">
+      <DependentUpon>RegisterADD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Testy.xaml.cs">
+      <DependentUpon>Testy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Votbaza.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Votbaza.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Votbaza.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Votbaza.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Votbaza.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Авторизация.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ВторникН.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ВторникС.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ВторникСТ.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Начальный_класс.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ПонедельникН.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ПонедельникС.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ПонедельникСТ.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Постоянное.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Предмет1.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ПятницаН.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ПятницаС.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ПятницаСТ.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="СредаН.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="СредаС.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="СредаСТ.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Средний_класс.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Старший_класс.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ЧетвергН.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ЧетвергС.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ЧетвергСТ.cs">
+      <DependentUpon>Votbaza.tt</DependentUpon>
+    </Compile>
+    <Page Include="ButtunTem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konec.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRedC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRedCadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRedP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRedPadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRedPyat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRedPyatAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRedS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRedSadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRedV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="konecRedVadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="mid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRedC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRedCadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRedP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRedPadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRedPyat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRedPyatAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRedS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRedSadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRedV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="midRedVadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Nach.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachINFO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRedCadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRedP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRedPadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRedPyat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRedPyatAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRedS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRedSadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRedV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRedVadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NachRedС.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Owner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Privet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegisterADD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Testy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="Votbaza.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Votbaza.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Votbaza.edmx.diagram">
+      <DependentUpon>Votbaza.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="School.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Группа %282%29.png" />
+    <Resource Include="Группа.png" />
+    <Resource Include="Пароль.png" />
+    <Resource Include="icons8-пароль.gif" />
+    <Resource Include="Пользователь.png" />
+    <Resource Include="44948.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Votbaza.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Votbaza.edmx</DependentUpon>
+      <LastGenOutput>Votbaza.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Votbaza.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Votbaza.edmx</DependentUpon>
+      <LastGenOutput>Votbaza.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
